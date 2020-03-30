@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/sprites/players/Penguin.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Penguin.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Flap"
+tracks/0/type = "value"
+tracks/0/path = NodePath("PenguinSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 0 ]
+}
+
+[node name="Penguin" type="RigidBody2D"]
+position = Vector2( 214.17, 167.676 )
+mass = 0.102041
+gravity_scale = 16.0
+script = ExtResource( 2 )
+
+[node name="PenguinSprite" type="Sprite" parent="."]
+position = Vector2( 0, -0.494629 )
+texture = ExtResource( 1 )
+hframes = 3
+
+[node name="FlapAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Flap = SubResource( 1 )
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+position = Vector2( 155.468, -0.157196 )
+polygon = PoolVector2Array( -105.5, -34, -104.3, -31.5, -95.5, -31.5, -95.5, -29.2, -89.5, -21.5, -81.1, -21.5, -79.1, -16.5, -76.7, -16.5, -73.5, -13.3, -73.5, -5.7, -88.5, -3.7, -88.5, -1.5, -103.5, 10.5, -103.5, 28.5, -113.5, 35.5, -113.5, 37.5, -221.5, 37.5, -221.5, 36.5, -232.5, 36.5, -232.5, 18.5, -230.5, 18.5, -223.5, 8.5, -221.5, 8.5, -221.5, 0.5, -219.4, 0.5, -203.4, -16.5, -141.5, -16.5, -141.5, -19.5, -139.3, -19.5, -124.5, -34.3, -124.5, -36.5, -105.5, -36.5 )

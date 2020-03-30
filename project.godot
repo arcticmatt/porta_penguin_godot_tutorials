@@ -19,6 +19,10 @@ config/name="porta_penguin_godot_tutorials"
 run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+CollisionLayers="*res://scripts/CollisionLayers.gd"
+
 [display]
 
 window/size/width=1600
